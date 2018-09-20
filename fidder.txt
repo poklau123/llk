@@ -1,0 +1,9 @@
+static function OnWebSocketMessage(oMsg: WebSocketMessage) {
+		// Log Message to the LOG tab
+		var payloadString = oMsg.PayloadAsString();
+		//FiddlerApplication.Log.LogString(payloadString);		
+		var arr = /unitTypes/i.exec(payloadString);
+		if(arr != null){
+			FiddlerApplication.Log.LogString(payloadString);
+		}
+	}
